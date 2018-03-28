@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AppService.Dto.StoreDto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to Stores</h2>
+
+<div class="form-group">
+    @Html.DropDownListFor(m => m.First().StoreId, new SelectList(Model, "StoreId", "Name"), new { @class = "form-control" })
+    <br />
+    <input id="#ViewEmployees" type="button" class="btn btn-success" value="View Employees"/>
+</div>
+
+
+<br />
+<h4>All Stores</h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Store Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(item.StoreId.ToString(), "StoreDetail", "Home", new { storeId = item.StoreId }, null)</td>
+            <td>@item.Name</td>
+            <td>@item.Phone</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Add Store", "Create", "Home", null, new { @class = "btn btn-primary" })
+
+@section Scripts{
+    
+    <script>
+        $(document).ready(function() {
+            $('#ViewEmployees').on("click",
+                function(e) {
+                    var data = JSON.stringify({ StoreId: $('#StoreId').val() });
+                    $.ajax({
+                        type: "POST",
+                        url: "/Home/EmployeesByStore",
+                        data: data,
+                        contentType: "application/json;charset=utf-8",
+                        success: function(result) {
+
+                        },
+                        error: function(data) {
+
+                        }
+                    });
+                });
+        })
+        
+    </script>
+   
+
+
+}

@@ -1,0 +1,5 @@
+C:\Users\jorge.zelaya\documents\visual studio 2017\Projects\Tienda.Net\Domain\bin\Debug\Domain.dll
+C:\Users\jorge.zelaya\documents\visual studio 2017\Projects\Tienda.Net\Domain\bin\Debug\Domain.pdb
+C:\Users\jorge.zelaya\documents\visual studio 2017\Projects\Tienda.Net\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\jorge.zelaya\documents\visual studio 2017\Projects\Tienda.Net\Domain\obj\Debug\Domain.dll
+C:\Users\jorge.zelaya\documents\visual studio 2017\Projects\Tienda.Net\Domain\obj\Debug\Domain.pdb
